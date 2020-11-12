@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Here, you can look at books that other people are reading!</h1>
+        <h2>You can also add a book yourself!</h2>
+        <h6>If you spam, you will no longer have permission to add books.</h6>
+        <h6>If you make a mistake, click the "edit" button below your response</h6>
+        <a style="margin: 5px;" class="btn btn-primary btn-lg" href="add-book/" role="button">Create</a>
+        <a style="margin: 5px;" class="btn btn-primary btn-lg" href="admin/" role="button">Admin Site</a>
+        {% for br in BR %}
+        <ul style="margin: 10px;">
+            <li>Title: {{ br.Title }} <br>
+                Author: {{ br.Author }} <br>
+                {% if br.desc == "" %}
+                Description: No description provided <br>
+                {% else %}
+                Description: {{ br.Description }} <br>
+                {% endif %}
+                Rating: {{ br.Rating }} <br>
+                Submitted by: {{ br.Name }} <br>
+<a class="btn btn-secondary btn-sm" href="{{ br.title }}" role="button">Edit</a>
+            </li>
+            <br>
+        </ul>
+    {% endfor %}
+    </body>
+</html>
+{% endblock %}

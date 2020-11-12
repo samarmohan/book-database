@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<html blocklang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
+{% endblock %}
