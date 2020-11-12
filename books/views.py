@@ -17,7 +17,7 @@ def home_view(request):
 
 
 def update_view(request, title):
-    instance = BookResponse.objects.get(title=title)
+    instance = BookResponse.objects.get(Title=title)
     form = BookResponseForm(request.POST or None, instance=instance)
     if form.is_valid():
         form.save()
