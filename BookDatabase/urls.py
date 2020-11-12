@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from books.views import home_view, add_book_view, update_view
 
@@ -23,3 +24,5 @@ urlpatterns = [
     path('<title>/', update_view),
     path('', home_view)
 ]
+
+urlpatterns += staticfiles_urlpatterns()
