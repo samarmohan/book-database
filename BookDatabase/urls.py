@@ -20,6 +20,6 @@ from books.views import home_view, add_book_view, update_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add-book/', add_book_view),
-    path('<title>/update', update_view),
+    path('<title>/', update_view),
     path('', home_view)
 ]
