@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from os import truncate
 from pathlib import Path
 import os
 import django_heroku
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o79*k@2*b!*(#j8%++4b^*3#hi&zr^+6+xl0_$(jlkcth27q8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["glacial-forest-38809.herokuapp.com"]
 
