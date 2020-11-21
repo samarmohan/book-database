@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+	</head>
+	<body>
+		<h1>Details of {{BR.Title}}</h1>
+		<br />
+
+		<h3>Description</h3>
+		<p>{{ BR.Description }}</p>
+
+		<h3>Rating</h3>
+		<p>
+			The rating of the book "{{BR.Title}}" is {{ BR.Rating }} out of 10!
+		</p>
+		<br />
+
+		<a role="button" class="btn btn-warning" href="/">Go Home</a><br />
+	</body>
+</html>
+{% endblock %}

@@ -24,3 +24,7 @@ def update_view(request, title):
         return HttpResponseRedirect("/")
     return render(request, "update.html", {"form": form})
 
+
+def detail_view(request, title):
+    Book_ResponseDetail = BookResponse.objects.get(Title=title)
+    return render(request, "detail.html", {"BR": Book_ResponseDetail})
