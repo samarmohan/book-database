@@ -5,14 +5,11 @@
 		<title>Title</title>
 	</head>
 	<body>
-		<h1>Here, you can look at books that other people are reading!</h1>
-		<h2>You can also add a book yourself!</h2>
-		<h6>If you spam, you will no longer have permission to add books.</h6>
-		<h6>
-			If you make a mistake, click the "edit" button below your response
-		</h6>
+        <h1 style="text-align: center; margin: 1%">Book Database</h1>
+        <hr />
+        <h5 style="text-align: center; margin: 2%;">Hello and welcome! This a book sharing platform! You can share a cool book you are reading or scroll through the entries.</h3>
 		<a
-			style="margin: 5px"
+			style="margin: 10px 0px"
 			class="btn btn-primary btn-lg"
 			href="add-book/"
 			role="button"
@@ -57,15 +54,14 @@
 						>Edit</a
 					>
 
-					<a
-						href="{{ br.Title }}/view"
-						class="btn btn-info btn-sm m-2"
+					<a href="{{ br.Title }}/view" class="btn btn-info btn-sm"
 						>View</a
 					>
 				</th>
 			</tr>
 			{% endfor %}
-		</table>
+        </table>
+        <p>Note: Do NOT spam or edit other entries that are no yours. You can view all the rules <a href="https://github.com/samarmohan/book-database/blob/master/README.md">here</a>!</p>
 	</body>
 </html>
 {% endblock %}
