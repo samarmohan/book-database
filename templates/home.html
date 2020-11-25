@@ -26,10 +26,16 @@
 			}
 			@keyframes slide {
 				from {
-					transform: translateX(0);
+					transform: translateX(0vw);
 				}
 				to {
-					transform: translateX(940px);
+					transform: translateX(61vw);
+					/* 580 */
+				}
+			}
+			@media only screen and (max-width: 775px) {
+				.btn {
+					margin-bottom: 2px;
 				}
 			}
 			.create {

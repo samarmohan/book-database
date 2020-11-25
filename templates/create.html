@@ -1,17 +1,23 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <form style="margin: 15px;" method="POST">{% csrf_token %}
-            {{ form.as_p }}
-        <input type="submit" value="Save">
-    </form>
-    <h6>Go back to the home page after you submit to see if your book has been entered. If you make a mistake, redo the form and I will remove the bad response as needed.</h6>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+		<style>
+			.note {
+				font-family: sans-serif;
+				font-style: italic;
+			}
+		</style>
+	</head>
+	<body>
+		<form style="margin: 15px" method="POST">
+			{% csrf_token %} {{ form.as_p }}
+			<input class="btn btn-success" type="submit" value="Save Entry" />
+		</form>
+		<p class="note">
+			Note: The maximum rating is 10 and the description is optional.
+		</p>
+	</body>
 </html>
 {% endblock %}
