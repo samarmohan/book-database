@@ -21,7 +21,7 @@ from books.views import home_view, add_book_view, update_view, detail_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add-book/', add_book_view),
-    path('<title>/update', update_view),
+    path('<title>/edit', update_view),
     path('<title>/view', detail_view),
     path('', home_view)
 ]
