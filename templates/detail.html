@@ -6,6 +6,7 @@
 		<style>
 			h1 {
 				font-family: serif;
+				margin-top: 1rem;
 			}
 			h3 {
 				font-family: serif;
@@ -24,7 +25,11 @@
 		<br />
 
 		<h3>Description</h3>
+		{% if BR.Description %}
 		<p>{{ BR.Description }}</p>
+		{% else %}
+		<p>No description provided 😢</p>
+		{% endif %}
 
 		<h3>Rating</h3>
 		<p>
