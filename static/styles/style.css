@@ -1,0 +1,80 @@
+* {
+  font-family: "Times New Roman, Times, serif";
+}
+
+body {
+  margin: 1000px;
+}
+
+.detail-heading {
+  margin-top: 1rem;
+}
+
+.main-heading {
+  text-align: center;
+  margin: 1%;
+}
+
+.welcome-message {
+  text-align: center;
+  margin: 2%;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+table {
+  font-weight: bold;
+}
+
+.note {
+  font-style: italic;
+}
+
+.btn {
+  font-family: sans-serif;
+}
+
+.create {
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  margin: 10px 0px;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  to {
+    -webkit-transform: translateX(61vw);
+            transform: translateX(61vw);
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  to {
+    -webkit-transform: translateX(61vw);
+            transform: translateX(61vw);
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .btn {
+    margin-bottom: 2px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

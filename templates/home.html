@@ -3,81 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Title</title>
-		<style>
-			h1 {
-				font-family: "Times New Roman", Times, serif;
-			}
-			p {
-				font-family: "Times New Roman", Times, serif;
-			}
-			h5 {
-				font-family: "Times New Roman", Times, serif;
-				font-weight: bold;
-			}
-			table {
-				font-family: "Times New Roman", Times, serif;
-				font-weight: bold;
-			}
-			.note {
-				font-style: italic;
-			}
-			.btn {
-				font-family: sans-serif;
-			}
-			@keyframes slide {
-				from {
-					transform: translateX(0vw);
-				}
-				to {
-					transform: translateX(61vw);
-					/* 580 */
-				}
-			}
-			@media only screen and (max-width: 775px) {
-				.btn {
-					margin-bottom: 2px;
-				}
-			}
-			.create {
-				animation-name: slide;
-				animation-duration: 9s;
-				animation-iteration-count: infinite;
-				animation-direction: alternate;
-				animation-delay: 500ms;
-			}
-		</style>
 	</head>
 	<body>
-		<h1 style="text-align: center; margin: 1%">Book Database</h1>
+		<h1 class="main-heading">Book Database</h1>
 		<hr />
-		<h5 style="text-align: center; margin: 2%">
+		<h5 class="welcome-message">
 			Hello <br />
 			This is a book sharing platform where you can either share books
 			with others or see books other people are reading!
 		</h5>
 		<a
-			style="margin: 10px 0px"
 			class="create btn btn-primary btn-lg"
 			href="add-book/"
 			role="button"
 			>Create An Entry</a
 		>
-		<!-- {% for br in BR %}
-        <ul style="margin: 10px;">
-            <li>Title: {{ br.Title }} <br>
-                Author: {{ br.Author }} <br>
-                {% if br.Description == null %}
-                Description: No description provided <br>
-                {% else %}
-                Description: {{ br.Description }} <br>
-                {% endif %}
-                Rating: {{ br.Rating }} <br>
-                Submitted by: {{ br.Name }} <br>
-<a class="btn btn-info btn-sm" href="{{ br.Title }}" role="button">Edit</a>
-            </li>
-            <br>
-        </ul>
-    {% endfor %} -->
 
 		<table class="table table-striped table-bordered table-hover">
 			<tr>
