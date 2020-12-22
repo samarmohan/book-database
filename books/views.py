@@ -12,8 +12,8 @@ def add_book_view(request):
 
 
 def home_view(request):
-    Book_ResponseHome = BookResponse.objects.all()
-    return render(request, "home.html", {"BR": Book_ResponseHome})
+    book_response_home_list = BookResponse.objects.all()
+    return render(request, "home.html", {"BR": book_response_home_list})
 
 
 def update_view(request, title):
@@ -26,5 +26,5 @@ def update_view(request, title):
 
 
 def detail_view(request, title):
-    Book_ResponseDetail = BookResponse.objects.get(Title=title)
-    return render(request, "detail.html", {"BR": Book_ResponseDetail})
+    book_response_detail = BookResponse.objects.get(Title=title)
+    return render(request, "detail.html", {"BR": book_response_detail})

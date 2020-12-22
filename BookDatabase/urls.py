@@ -17,18 +17,18 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from books.views import home_view, add_book_view, update_view, detail_view
-from books.viewsets import BookResponseCreate, BookResponseGet, BookResponseRetrieveSingle, BookResponseUpdate, BookResponseDelete
+from books.api import CreateAPI, ListAPI, RetrieveAPI, UpdateAPI, DeleteAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add-book/', add_book_view),
-    path('<title>/edit', update_view),
-    path('<title>/view', detail_view),
-    path('api/books/create', BookResponseCreate.as_view()),
-    path('api/books', BookResponseGet.as_view()),
-    path('api/books/<Title>/detail', BookResponseRetrieveSingle.as_view()),
-    path('api/books/<Title>/update', BookResponseUpdate.as_view()),
-    path('api/books/<Title>/delete', BookResponseDelete.as_view()),
+    path('<title>/update', update_view),
+    path('<title>/detail', detail_view),
+    path('api/books/create', CreateAPI.as_view()),
+    path('api/books', ListAPI.as_view()),
+    path('api/books/<Title>/detail', RetrieveAPI.as_view()),
+    path('api/books/<Title>/update', UpdateAPI.as_view()),
+    path('api/books/<Title>/delete', DeleteAPI.as_view()),
     path('', home_view)
 ]
 
