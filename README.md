@@ -19,5 +19,23 @@ Please use common sense while on the website:
 -   No bullying
 
 ### Contributing
+The guidelines for contributing are [here](.github/CONTRIBUTING.md)
 
-If you discover a bug or want to suggest a feature, add an issue or submit a pull request! Follow the basic GitHub contributing guidelines!
+### For Developers
+***Tech Stack*** <br/>
+##### Frontend
+- Django HTML - Templating syntax, Markup
+- SASS/SCSS - CSS Precompiler 
+- Bootstrap - CSS Component Based Framework
+
+##### Backend
+- Django - Python Full Stack Web Framework
+- Django Rest Framework - Django Framework use to create REST APIs.
+-  PostgreSQL - SQL Database
+
+##### Hosting
+- Heroku - Deployment service
+
+#### DevOps
+- Git - Version Control System
+- GitHub - A place to share Git repos 
