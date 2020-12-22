@@ -26,9 +26,9 @@ urlpatterns = [
     path('<title>/view', detail_view),
     path('api/books/create', BookResponseCreate.as_view()),
     path('api/books', BookResponseGet.as_view()),
-    path('api/books/<int:pk>/detail', BookResponseRetrieveSingle.as_view()),
-    path('api/books/<int:pk>/update', BookResponseUpdate.as_view()),
-    path('api/books/<int:pk>/delete', BookResponseDelete.as_view()),
+    path('api/books/<Title>/detail', BookResponseRetrieveSingle.as_view()),
+    path('api/books/<Title>/update', BookResponseUpdate.as_view()),
+    path('api/books/<Title>/delete', BookResponseDelete.as_view()),
     path('', home_view)
 ]
 
