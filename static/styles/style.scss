@@ -16,9 +16,9 @@ $weight: bold;
 	margin: 2%;
 }
 .reload-button {
-	position: absolute;
-	top: 90%;
-	left: 45%;
+	margin-top: 100px;
+	margin-left: 300px;
+	margin-bottom: 10px;
 }
 h5 {
 	font-weight: $weight;
@@ -38,7 +38,6 @@ table {
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-delay: 500ms;
-	margin: 10px 0px;  
 }
 @keyframes slide {
 	from {
