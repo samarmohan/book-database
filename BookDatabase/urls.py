@@ -18,6 +18,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from books.views import home_view, add_book_view, update_view, detail_view
 from books.api import CreateAPI, ListAPI, RetrieveAPI, UpdateAPI, DeleteAPI
+from frontend.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +30,8 @@ urlpatterns = [
     path('api/books/<Title>/detail/', RetrieveAPI.as_view()),
     path('api/books/<Title>/update/', UpdateAPI.as_view()),
     path('api/books/<Title>/delete/', DeleteAPI.as_view()),
-    path('', home_view)
+    path('', home_view),
+    path('dev/', index)
 ]
 
 urlpatterns += staticfiles_urlpatterns()
