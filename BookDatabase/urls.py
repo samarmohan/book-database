@@ -15,23 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path
-from books.views import home_view, add_book_view, update_view, detail_view
-from books.api import CreateAPI, ListAPI, RetrieveAPI, UpdateAPI, DeleteAPI
-from frontend.views import index
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('add-book/', add_book_view),
-    path('<title>/update/', update_view),
-    path('<title>/detail/', detail_view),
-    path('api/books/create/', CreateAPI.as_view()),
-    path('api/books/', ListAPI.as_view()),
-    path('api/books/<Title>/detail/', RetrieveAPI.as_view()),
-    path('api/books/<Title>/update/', UpdateAPI.as_view()),
-    path('api/books/<Title>/delete/', DeleteAPI.as_view()),
-    path('', home_view),
-    path('dev/', index)
+    path('', include("books.urls")),
+    path('api/books', include("books.api-urls")),
+    path('development/', include("frontend.urls"))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
