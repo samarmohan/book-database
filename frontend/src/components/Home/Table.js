@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Table = (props) => {
+import { getBooks } from "../../redux/actions/bookActions";
+
+const Table = () => {
+	const books = useSelector((state) => state.books.books);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getBooks());
+	}, []);
+
 	return (
 		<table className="table table-striped table-bordered table-hover table-dark">
 			<thead>
@@ -13,12 +23,12 @@ const Table = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				{props.bookResponse.map((br) => (
-					<tr key={br.Title}>
-						<td>{br.Title}</td>
-						<td>{br.Author}</td>
-						<td>{br.Rating}</td>
-						<td>{br.Name}</td>
+				{books.map((eachBook) => (
+					<tr key={eachBook.Title}>
+						<td>{eachBook.Title}</td>
+						<td>{eachBook.Author}</td>
+						<td>{eachBook.Rating}</td>
+						<td>{eachBook.Name}</td>
 						<td>
 							<a
 								className="btn btn-danger btn-sm m-1"
