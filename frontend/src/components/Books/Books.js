@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getBooks } from "../../redux/actions/bookActions";
 
-const Table = () => {
+const Books = () => {
 	const books = useSelector((state) => state.books.books);
 	const dispatch = useDispatch();
 
@@ -52,4 +52,4 @@ const Table = () => {
 	);
 };
 
-export default Table;
+export default Books;

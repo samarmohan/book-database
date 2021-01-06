@@ -9,7 +9,7 @@ import store from "../redux/store/";
 import NavBar from "./Layout/NavBar";
 import Footer from "./Layout/Footer";
 
-import Table from "./Home/Table";
+import Books from "./Books/Books";
 
 const App = () => {
 	return (
@@ -19,7 +19,7 @@ const App = () => {
 				<div className="container" style={mainStyles}>
 					<h1>Book Entries</h1>
 
-					<Table />
+					<Books />
 				</div>
 				<Footer />
 			</Provider>
