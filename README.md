@@ -19,7 +19,7 @@ Please use common sense while on the website:
 -   No bullying
 
 ### Contributing
-The guidelines for contributing are [here](.github/CONTRIBUTING.md)
+The guidelines for contributing are [here](CONTRIBUTING.md)
 
 ### For Developers
 ***Tech Stack*** <br/>
