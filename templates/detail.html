@@ -7,20 +7,34 @@
 		</style>
 	</head>
 	<body>
-		<h1 class="detail-heading">Details of {{BR.Title}}</h1>
+		<h1 class="detail-heading">Details of {{ BR.Title }}</h1>
 		<hr />
 		<br />
 
-		<h3>Description</h3>
-		{% if BR.Description %}
-		<p>{{ BR.Description }}</p>
+        <h3>Summary</h3>
+		{% if BR.Summary %}
+		<p>{{ BR.Summary }}</p>
 		{% else %}
-		<p>No description provided 😢</p>
+		<p>No summary provided 😢</p>
+		{% endif %}
+
+        <h3>Pages</h3>
+		{% if BR.Pages %}
+		<p>This book has {{ BR.Pages }} pages</p>
+		{% else %}
+		<p>No page count provided 😢</p>
+		{% endif %}
+
+        <h3>Inappropriate Words</h3>
+		{% if BR.ContainsBadWords %}
+		<p>This book contains bad words</p>
+		{% else %}
+		<p>This book does not contain bad words</p>
 		{% endif %}
 
 		<h3>Rating</h3>
 		<p>
-			The rating of the book "{{BR.Title}}" is {{ BR.Rating }} out of 10!
+			The rating of the book "{{ BR.Title }}" is {{ BR.Rating }} out of 10!
 		</p>
 		<br />
 

@@ -25,6 +25,7 @@
 				<th>Author</th>
 				<th>Rating</th>
 				<th>Submitted by</th>
+                <th>Page Count</th>
 				<th>Actions</th>
 			</tr>
 			{% for br in BR %}
@@ -33,6 +34,7 @@
 				<th>{{ br.Author }}</th>
 				<th>{{ br.Rating }}</th>
 				<th>{{ br.Name }}</th>
+                <th>{{ br.PageCount }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"
