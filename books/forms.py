@@ -10,7 +10,6 @@ class BookResponseForm(forms.ModelForm):
             "Email",
             "Title",
             "Author",
-            "Description",
             "Summary",
             "PageCount",
             "ContainsBadWords",
