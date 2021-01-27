@@ -5,4 +5,4 @@ from .models import BookResponse
 class BookResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = BookResponse
-        fields = ("Name", "Email", "Title", "Author", "Summary", "PageCount", "ContainsBadWords", "Rating")
+        fields = ("Name", "Email", "Title", "Author", "Description", "PageCount", "ContainsBadWords", "Rating")
