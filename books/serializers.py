@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import BookResponse
+from .models import BookModel
 
 
-class BookResponseSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BookResponse
+        model = BookModel
         fields = ("Name", "Email", "Title", "Author", "Description", "PageCount", "ContainsBadWords", "Rating")

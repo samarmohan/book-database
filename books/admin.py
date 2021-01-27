@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import BookResponse
+from .models import BookModel
 
 
-class BookResponseAdmin(admin.ModelAdmin):
+class BookAdmin(admin.ModelAdmin):
     list_display = ("Name", "Email", "Title", "Author", "PageCount")
 
 
-admin.site.register(BookResponse, BookResponseAdmin)
+admin.site.register(BookModel, BookAdmin)

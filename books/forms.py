@@ -1,10 +1,10 @@
 from django import forms
-from .models import BookResponse
+from .models import BookModel
 
 
-class BookResponseForm(forms.ModelForm):
+class BookForm(forms.ModelForm):
     class Meta:
-        model = BookResponse
+        model = BookModel
         fields = [
             "Name",
             "Email",
