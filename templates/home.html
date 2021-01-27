@@ -28,22 +28,22 @@
                 <th>Page Count</th>
 				<th>Actions</th>
 			</tr>
-			{% for br in BR %}
+			{% for book in books %}
 			<tr>
-				<th>{{ br.Title }}</th>
-				<th>{{ br.Author }}</th>
-				<th>{{ br.Rating }}</th>
-				<th>{{ br.Name }}</th>
-                <th>{{ br.PageCount }}</th>
+				<th>{{ book.Title }}</th>
+				<th>{{ book.Author }}</th>
+				<th>{{ book.Rating }}</th>
+				<th>{{ book.Name }}</th>
+                <th>{{ book.PageCount }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"
-						href="{{ br.Title }}/update"
+						href="{{ book.Title }}/update"
 						role="button"
 						>Update</a
 					>
 
-					<a href="{{ br.Title }}/detail" class="btn btn-info btn-sm"
+					<a href="{{ book.Title }}/detail" class="btn btn-info btn-sm"
 						>Details</a
 					>
 				</th>

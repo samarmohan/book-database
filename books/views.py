@@ -1,10 +1,10 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .models import BookResponse
-from .forms import BookResponseForm
+from .models import BookModel
+from .forms import BookForm
 
 
 def add_book_view(request):
-    form = BookResponseForm(request.POST or None)
+    form = BookForm(request.POST or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect("/")
@@ -12,13 +12,13 @@ def add_book_view(request):
 
 
 def home_view(request):
-    book_response_home_list = BookResponse.objects.all()
-    return render(request, "home.html", {"BR": book_response_home_list})
+    book_response_home_list = BookModel.objects.all()
+    return render(request, "home.html", {"books": book_response_home_list})
 
 
 def update_view(request, title):
-    instance = BookResponse.objects.get(Title=title)
-    form = BookResponseForm(request.POST or None, instance=instance)
+    instance = BookModel.objects.get(Title=title)
+    form = BookForm(request.POST or None, instance=instance)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect("/")
@@ -26,5 +26,5 @@ def update_view(request, title):
 
 
 def detail_view(request, title):
-    book_response_detail = BookResponse.objects.get(Title=title)
-    return render(request, "detail.html", {"BR": book_response_detail})
+    book_response_detail = BookModel.objects.get(Title=title)
+    return render(request, "detail.html", {"book": book_response_detail})

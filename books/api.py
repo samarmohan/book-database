@@ -1,33 +1,33 @@
-from .models import BookResponse
+from .models import BookModel
 from rest_framework import generics
-from .serializers import BookResponseSerializer
+from .serializers import BookSerializer
 
 
 class CreateAPI(generics.CreateAPIView):
-    queryset = BookResponse.objects.all()
-    serializer_class = BookResponseSerializer
+    queryset = BookModel.objects.all()
+    serializer_class = BookSerializer
     lookup_field = "Title"
 
 
 class ListAPI(generics.ListAPIView):
-    queryset = BookResponse.objects.all()
-    serializer_class = BookResponseSerializer
+    queryset = BookModel.objects.all()
+    serializer_class = BookSerializer
     lookup_field = "Title"
 
 
 class RetrieveAPI(generics.RetrieveAPIView):
-    queryset = BookResponse.objects.all()
-    serializer_class = BookResponseSerializer
+    queryset = BookModel.objects.all()
+    serializer_class = BookSerializer
     lookup_field = "Title"
 
 
 class UpdateAPI(generics.RetrieveUpdateAPIView):
-    queryset = BookResponse.objects.all()
-    serializer_class = BookResponseSerializer
+    queryset = BookModel.objects.all()
+    serializer_class = BookSerializer
     lookup_field = "Title"
 
 
 class DeleteAPI(generics.RetrieveDestroyAPIView):
-    queryset = BookResponse.objects.all()
-    serializer_class = BookResponseSerializer
+    queryset = BookModel.objects.all()
+    serializer_class = BookSerializer
     lookup_field = "Title"

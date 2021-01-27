@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-class BookResponse(models.Model):
+class BookModel(models.Model):
     Name = models.CharField(max_length=255, blank=False, null=False, verbose_name="Your FULL name")
     Email = models.EmailField(max_length=255, blank=False, null=False, verbose_name="Your SCHOOL email")
     Title = models.CharField(max_length=255, blank=False, null=False, unique=True, verbose_name="Title of the book")
