@@ -21,7 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("books.urls")),
     path('api/books/', include("books.api-urls")),
-    path('development/', include("frontend.urls"))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
