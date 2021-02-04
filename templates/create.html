@@ -1,17 +1,18 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Create an Entry</title>
+		<title>{% block title %}Create{% endblock title %}</title>
 	</head>
 	<body>
+    {% block content %}
 		<form style="margin: 15px" method="POST">
 			{% csrf_token %} {{ form.as_p }}
-			<input class="btn btn-success" type="submit" value="Save Entry" />
+			<input class="btn btn-success" type="submit" value="Create Entry" />
 		</form>
 		<p class="note">
 			Note: The maximum rating is 10 and the description is optional.
 		</p>
 	</body>
+{% endblock content %}
 </html>
-{% endblock %}

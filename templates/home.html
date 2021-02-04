@@ -1,10 +1,11 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Title</title>
+		<title>{% block title %} Home {% endblock title %}</title>
 	</head>
 	<body>
+    {% block content %}
 		<h1 class="main-heading">Book Database</h1>
 		<hr />
 		<h5 class="welcome-message">
@@ -61,6 +62,6 @@
 				>here</a
 			>!
 		</p>
+    {% endblock %}
 	</body>
 </html>
-{% endblock %}
