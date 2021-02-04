@@ -25,7 +25,7 @@
             crossorigin="anonymous"
     />
 
-    <title>Book Database</title>
+    <title>Book Database - {% block title %} {% endblock title %}</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -75,10 +75,10 @@
         </ul>
     </div>
 </nav>
-<div class="container">{% block content %} {% endblock %}</div>
+<div class="container">{% block content %} {% endblock content %}</div>
 <footer class="m-3 footer text-muted">
     <div class="container">
-        <p>&copy; 2021 - Samar Mohan - Book Database v2.1.1</p>
+        <p>&copy; 2021 - Samar Mohan - Book Database v2.1.2</p>
     </div>
 </footer>
 
