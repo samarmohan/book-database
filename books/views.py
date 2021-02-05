@@ -13,6 +13,10 @@ def add_book_view(request):
 
 def home_view(request):
     book_response_home_list = BookModel.objects.all()
+    title_contains_query = request.GET.get("title")
+
+    if title_contains_query is not "" and title_contains_query is not None:
+        book_response_home_list = book_response_home_list.filter(Title__icontains=title_contains_query)
     return render(request, "home.html", {"books": book_response_home_list})
 
 

@@ -23,7 +23,13 @@
 			>Create An Entry</a
 		>
         <button class="reload-button btn btn-info btn-sm" onclick="window.location.reload();">Reload for new entries</button>
-		<table class="table table-striped table-bordered table-hover">
+		<h3>SEARCH</h3>
+        <form method="get" action=".">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" />
+            <input type="submit">
+        </form>
+        <table class="table table-striped table-bordered table-hover">
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
