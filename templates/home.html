@@ -5,44 +5,77 @@
 		<title>{% block title %} Home {% endblock title %}</title>
 	</head>
 	<body>
-    {% block content %}
+		{% block content %}
 		<h1 class="main-heading">Book Database</h1>
 		<hr />
 		<h5 class="welcome-message">
 			Hello <br />
 			This is a book sharing platform where you can either share books
 			with others or see books other people are reading! <br />
-            <a role="button" class="btn btn-link" href="rules/">Rules</a>
-            <a role="button" class="btn btn-link" href="license/">License</a>
+			<a role="button" class="btn btn-link" href="rules/">Rules</a>
+			<a role="button" class="btn btn-link" href="license/">License</a>
 		</h5>
 
-		<a
-			class="create btn btn-primary btn-lg"
-			href="add-book/"
-			role="button"
+		<a class="create btn btn-primary btn-lg" href="add-book/" role="button"
 			>Create An Entry</a
 		>
-        <button class="reload-button btn btn-info btn-sm" onclick="window.location.reload();">Reload for new entries</button>
-		<h3>SEARCH</h3>
-        <form method="get" action=".">
-            <label for="title">Search by Title:</label>
-            <input type="text" class="form-control form-group-lg" id="title" name="title" />
-            <label for="author">Search by Author:</label>
-            <input type="text" class="form-control form-group-lg" id="author" name="author" />
-            <label for="name">Search by Name:</label>
-            <input type="text" class="form-control form-group-lg" id="name" name="name" />
-            <label for="rating">Search by Rating:</label>
-            <input type="number" class="form-control form-group-lg" id="rating" name="rating" />
-            <input type="submit">
-            <a role="button" href="/">Reset Filters</a>
-        </form>
-        <table class="table table-striped table-bordered table-hover">
+		<button
+			class="reload-button btn btn-info btn-sm"
+			onclick="window.location.reload();"
+		>
+			Reload for new entries
+		</button>
+		<h3>Filter</h3>
+		<form method="get" action=".">
+			<label for="title">Filter by the title of the book:</label>
+			<input
+				type="text"
+				class="form-control form-group-lg"
+				id="title"
+				name="title"
+			/>
+			<label for="author">Filter by the author of the book:</label>
+			<input
+				type="text"
+				class="form-control form-group-lg"
+				id="author"
+				name="author"
+			/>
+			<label for="name"
+				>Filter by the name of the person who submitted the book:</label
+			>
+			<input
+				type="text"
+				class="form-control form-group-lg"
+				id="name"
+				name="name"
+			/>
+			<label for="rating">Filter by the rating of the book:</label>
+			<input
+				type="number"
+				class="form-control form-group-lg"
+				id="rating"
+				name="rating"
+			/>
+			<div class="form-buttons">
+				<input
+					type="submit"
+					id="filter"
+					class="btn btn-warning"
+					value="Filter"
+				/>
+				<a role="button" class="btn btn-success" href="/"
+					>Reset Filters</a
+				>
+			</div>
+		</form>
+		<table class="table table-striped table-bordered table-hover">
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Rating</th>
 				<th>Submitted by</th>
-                <th>Page Count</th>
+				<th>Page Count</th>
 				<th>Actions</th>
 			</tr>
 			{% for book in books %}
@@ -51,7 +84,7 @@
 				<th>{{ book.Author }}</th>
 				<th>{{ book.Rating }}</th>
 				<th>{{ book.Name }}</th>
-                <th>{{ book.PageCount }}</th>
+				<th>{{ book.PageCount }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"
@@ -60,7 +93,9 @@
 						>Update</a
 					>
 
-					<a href="{{ book.Title }}/detail" class="btn btn-info btn-sm"
+					<a
+						href="{{ book.Title }}/detail"
+						class="btn btn-info btn-sm"
 						>Details</a
 					>
 				</th>
@@ -75,6 +110,6 @@
 				>here</a
 			>!
 		</p>
-    {% endblock %}
+		{% endblock %}
 	</body>
 </html>

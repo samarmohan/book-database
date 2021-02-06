@@ -2,7 +2,10 @@ $main-font: "Times New Roman, Times, serif";
 $weight: bold;
 
 * {
-    font-family: $main-font;
+	font-family: $main-font;
+}
+.form-buttons {
+	margin-top: 100px;
 }
 .detail-heading {
 	margin-top: 1rem;
