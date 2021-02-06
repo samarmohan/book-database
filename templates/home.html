@@ -5,31 +5,33 @@
 		<title>{% block title %} Home {% endblock title %}</title>
 	</head>
 	<body>
-    {% block content %}
+		{% block content %}
 		<h1 class="main-heading">Book Database</h1>
 		<hr />
 		<h5 class="welcome-message">
 			Hello <br />
 			This is a book sharing platform where you can either share books
 			with others or see books other people are reading! <br />
-            <a role="button" class="btn btn-link" href="rules/">Rules</a>
-            <a role="button" class="btn btn-link" href="license/">License</a>
+			<a role="button" class="btn btn-link" href="rules/">Rules</a>
+			<a role="button" class="btn btn-link" href="license/">License</a>
 		</h5>
 
-		<a
-			class="create btn btn-primary btn-lg"
-			href="add-book/"
-			role="button"
+		<a class="create btn btn-primary btn-lg" href="add-book/" role="button"
 			>Create An Entry</a
 		>
-        <button class="reload-button btn btn-info btn-sm" onclick="window.location.reload();">Reload for new entries</button>
+		<button
+			class="reload-button btn btn-info btn-sm"
+			onclick="window.location.reload();"
+		>
+			Reload for new entries
+		</button>
 		<table class="table table-striped table-bordered table-hover">
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Rating</th>
 				<th>Submitted by</th>
-                <th>Page Count</th>
+				<th>Page Count</th>
 				<th>Actions</th>
 			</tr>
 			{% for book in books %}
@@ -38,7 +40,7 @@
 				<th>{{ book.Author }}</th>
 				<th>{{ book.Rating }}</th>
 				<th>{{ book.Name }}</th>
-                <th>{{ book.PageCount }}</th>
+				<th>{{ book.PageCount }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"
@@ -47,13 +49,15 @@
 						>Update</a
 					>
 
-					<a href="{{ book.Title }}/detail" class="btn btn-info btn-sm"
+					<a
+						href="{{ book.Title }}/detail"
+						class="btn btn-info btn-sm"
 						>Details</a
 					>
 				</th>
 			</tr>
 			{% endfor %}
 		</table>
-    {% endblock %}
+		{% endblock %}
 	</body>
 </html>

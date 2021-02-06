@@ -5,12 +5,14 @@
 		<title>{% block title %}Create{% endblock title %}</title>
 	</head>
 	<body>
-    {% block content %}
+		{% block content %}
 		<form style="margin: 15px" method="POST">
 			{% csrf_token %} {{ form.as_p }}
 			<input class="btn btn-success" type="submit" value="Create Entry" />
-            <p id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</p>
+			<p id="emailHelp" class="form-text text-muted">
+				We'll never share your email with anyone else.
+			</p>
 		</form>
 	</body>
-{% endblock content %}
+	{% endblock content %}
 </html>
