@@ -25,9 +25,16 @@
         <button class="reload-button btn btn-info btn-sm" onclick="window.location.reload();">Reload for new entries</button>
 		<h3>SEARCH</h3>
         <form method="get" action=".">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" name="title" />
+            <label for="title">Search by Title:</label>
+            <input type="text" class="form-control form-group-lg" id="title" name="title" />
+            <label for="author">Search by Author:</label>
+            <input type="text" class="form-control form-group-lg" id="author" name="author" />
+            <label for="name">Search by Name:</label>
+            <input type="text" class="form-control form-group-lg" id="name" name="name" />
+            <label for="rating">Search by Rating:</label>
+            <input type="number" class="form-control form-group-lg" id="rating" name="rating" />
             <input type="submit">
+            <a role="button" href="/">Reset Filters</a>
         </form>
         <table class="table table-striped table-bordered table-hover">
 			<tr>
