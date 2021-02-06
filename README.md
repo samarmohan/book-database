@@ -15,7 +15,7 @@ If you just want to help people who don't know what to read, submit a book.
 Please use common sense while on the website:
 
 -   No spamming
--   No inapropriate content
+-   No inappropriate content
 -   No bullying
 
 ### Contributing
