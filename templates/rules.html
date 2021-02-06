@@ -1,23 +1,21 @@
 {% extends "base.html" %}
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>{% block title %}Rules{% endblock title %}</title>
-        <style>
-        </style>
-    </head>
-    <body>
-    {% block content %}
-        <h1>Rules</h1>
-        <h4>Please use common sense while on this site!</h4>
-        <ul>
-            <li>No spamming entries</li>
-            <li>No updating entries that are not yours</li>
-            <li>No inappropriate content</li>
-            <li>No adding entries under someone else's name</li>
-        </ul>
-        <a role="button" class="btn btn-warning" href="/" >Go Home</a>
-    {% endblock %}
-
-    </body>
-    </html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% block title %}Rules{% endblock title %}</title>
+		<style></style>
+	</head>
+	<body>
+		{% block content %}
+		<h1>Rules</h1>
+		<h4>Please use common sense while on this site!</h4>
+		<ul>
+			<li>No spamming entries</li>
+			<li>No updating entries that are not yours</li>
+			<li>No inappropriate content</li>
+			<li>No adding entries under someone else's name</li>
+		</ul>
+		<a role="button" class="btn btn-warning" href="/">Go Home</a>
+		{% endblock %}
+	</body>
+</html>

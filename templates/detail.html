@@ -3,30 +3,29 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>{% block title %}Details{% endblock title %}</title>
-		<style>
-		</style>
+		<style></style>
 	</head>
 	<body>
-    {% block content %}
+		{% block content %}
 		<h1 class="detail-heading">Details of {{ book.Title }}</h1>
 		<hr />
 		<br />
 
-        <h3>Summary</h3>
+		<h3>Summary</h3>
 		{% if book.Description %}
 		<p>{{ book.Description }}</p>
 		{% else %}
 		<p>No summary provided 😢</p>
 		{% endif %}
 
-        <h3>Pages</h3>
+		<h3>Pages</h3>
 		{% if book.PageCount %}
 		<p>This book has {{ book.PageCount }} pages</p>
 		{% else %}
 		<p>No page count provided 😢</p>
 		{% endif %}
 
-        <h3>Inappropriate Words</h3>
+		<h3>Inappropriate Words</h3>
 		{% if book.ContainsBadWords %}
 		<p>This book contains bad words</p>
 		{% else %}
@@ -35,11 +34,12 @@
 
 		<h3>Rating</h3>
 		<p>
-			The rating of the book "{{ book.Title }}" is {{ book.Rating }} out of 10!
+			The rating of the book "{{ book.Title }}" is {{ book.Rating }} out
+			of 10!
 		</p>
 		<br />
 
 		<a role="button" class="btn btn-warning" href="/">Go Home</a><br />
-    {% endblock content %}
+		{% endblock content %}
 	</body>
 </html>
