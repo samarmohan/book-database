@@ -12,7 +12,7 @@ def add_book_view(request):
 
 
 def home_view(request):
-    book_response_home_list = BookModel.objects.all()
+    book_response_home_list = BookModel.objects.order_by("-Rating")
     title_contains_query = request.GET.get("title")
     author_contains_query = request.GET.get("author")
     name_contains_query = request.GET.get("name")
