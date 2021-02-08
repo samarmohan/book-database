@@ -1,6 +1,6 @@
-# Book Database
+# Book Worm
 
-##### (Name subject to change)
+### Book Sharing Platform
 
 [This](https://glacial-forest-38809.herokuapp.com/) is a web app where you can share books you are reading.
 
@@ -19,7 +19,7 @@ Please use common sense while on the website:
 -   No bullying
 
 ### Contributing
-The guidelines for contributing are [here](CONTRIBUTING.md)
+The guidelines for contributing are [here](.github/CONTRIBUTING.md)
 
 ### For Developers
 ***Tech Stack*** <br/>
