@@ -3,7 +3,7 @@
 }
 
 .form-buttons {
-  margin-top: 100px;
+  margin: 10px;
 }
 
 .main-heading {
@@ -35,6 +35,7 @@
           animation-direction: alternate;
   -webkit-animation-delay: 500ms;
           animation-delay: 500ms;
+  margin: 10px;
 }
 
 @-webkit-keyframes slide {

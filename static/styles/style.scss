@@ -4,7 +4,7 @@ $main-font: "Merriweather", Times, serif;
 	font-family: $main-font;
 }
 .form-buttons {
-	margin-top: 100px;
+	margin: 10px;
 }
 .main-heading {
 	text-align: center;
@@ -26,6 +26,7 @@ $main-font: "Merriweather", Times, serif;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-delay: 500ms;
+	margin: 10px;
 }
 @keyframes slide {
 	from {
