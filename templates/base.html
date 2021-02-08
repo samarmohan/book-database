@@ -28,53 +28,64 @@
 		<title>Book Database - {% block title %} {% endblock title %}</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="/">Book Database Home</a>
-			<button
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-				class="navbar-toggler"
-				data-target="#navbarNav"
-				data-toggle="collapse"
-				type="button"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="add-book/"
-							>Create Book<span class="sr-only"
-								>(current)</span
-							></a
-						>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="rules/"
-							>Rules<span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="license/"
-							>License<span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item active">
+		<nav
+			class="navbar navbar-expand-md navbar-light bg-light navbar-fixed-top"
+		>
+			<div class="container">
+				<a class="navbar-brand mr-4" href="/">Book Database</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav mr-auto">
 						<a
-							class="nav-link"
-							target="blank"
-							href="https://www.github.com/samarmohan/book-database"
-							>GitHub<span class="sr-only">(current)</span></a
+							class="nav-item nav-link active"
+							href="https://github.com/samarmohan/book-database"
+							>GitHub</a
 						>
-					</li>
-				</ul>
+						<a class="nav-item nav-link active" href="/rules"
+							>Rules</a
+						>
+						<a class="nav-item nav-link active" href="/license"
+							>License</a
+						>
+					</div>
+					<div class="navbar-nav">
+						{% if user.is_authenticated %}
+						<a class="nav-item nav-link active" href="/add-book"
+							>Add Book</a
+						>
+						<a class="nav-item nav-link active" href="/logout"
+							>Logout</a
+						>
+						{% else %}
+						<a class="nav-item nav-link active" href="/login"
+							>Login</a
+						>
+						<a class="nav-item nav-link active" href="/register"
+							>Register</a
+						>
+						{% endif %}
+					</div>
+				</div>
 			</div>
 		</nav>
-		<div class="container">{% block content %} {% endblock content %}</div>
+		<div class="container">
+			{% if messages %} {% for message in messages %}
+			<div class="alert alert-success">{{ message }}</div>
+			{% endfor %} {% endif %} {% block content %} {% endblock content %}
+		</div>
 		<footer class="m-3 footer text-muted">
 			<div class="container">
-				<p>&copy; 2021 - Samar Mohan - Book Database v2.2.4</p>
+				<p>&copy; 2021 - Samar Mohan - Book Database v3.0.0</p>
 			</div>
 		</footer>
 

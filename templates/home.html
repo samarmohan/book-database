@@ -2,14 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>{% block title %} Home {% endblock title %}</title>
+		<title>{% block title %}Home{% endblock title %}</title>
 	</head>
 	<body>
 		{% block content %}
 		<h1 class="main-heading">Book Database</h1>
 		<hr />
+		{% if user.is_authenticated %}
 		<h5 class="welcome-message">
-			Hello <br />
+			Hello <em><strong>{{ user.username }}</strong></em
+			><br />
 			This is a book sharing platform where you can either share books
 			with others or see books other people are reading! <br />
 			<a role="button" class="btn btn-link" href="rules/">Rules</a>
@@ -102,6 +104,24 @@
 			</tr>
 			{% endfor %}
 		</table>
-		{% endblock content %}
+		{% else %}
+		<h3>
+			Please <a href="/login">log in</a> or
+			<a href="/register">register</a> to continue!
+		</h3>
+		<br />
+		<h4>About</h4>
+		<p>
+			This is a website where you can share books you have read with other
+			people.
+		</p>
+		<p>
+			Check out the code for the site
+			<a href="https://github.com/samarmohan/book-database">here</a>. You
+			can also check out the <a href="/rules">Rules</a> and
+			<a href="/license">License</a>
+		</p>
+
+		{% endif %} {% endblock content %}
 	</body>
 </html>

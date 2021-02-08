@@ -34,15 +34,19 @@ ALLOWED_HOSTS = ["glacial-forest-38809.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    'books',
+    'users',
+    'crispy_forms',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books',
-    'rest_framework',
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,7 +70,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, "templates"),
-            os.path.join(BASE_DIR, "frontend/templates")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -132,6 +135,16 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/users/login"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")
+EMAIL_PORT = 587
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
