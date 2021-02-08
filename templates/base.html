@@ -12,7 +12,7 @@
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+			content="width=device-width, initial-scale=1, shrink-to-fit=yes"
 		/>
 		<meta
 			name="description"
@@ -41,60 +41,65 @@
 		<title>Book Database - {% block title %} {% endblock title %}</title>
 	</head>
 	<body>
-		<nav
-			class="navbar navbar-expand-md navbar-fixed-top"
-		>
-			<div class="container">
-				<a class="navbar-brand mr-4" href="/">Book Database</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav mr-auto">
-						<a
-							class="nav-item nav-link active"
-							href="https://github.com/samarmohan/book-database"
-							>GitHub</a
-						>
-						<a class="nav-item nav-link active" href="/rules"
-							>Rules</a
-						>
-						<a class="nav-item nav-link active" href="/license"
-							>License</a
-						>
-					</div>
-					<div class="navbar-nav">
-						{% if user.is_authenticated %}
-						<a class="nav-item nav-link active" href="/add-book"
-							>Add Book</a
-						>
-						<a class="nav-item nav-link active" href="/logout"
-							>Logout</a
-						>
-						{% else %}
-						<a class="nav-item nav-link active" href="/login"
-							>Login</a
-						>
-						<a class="nav-item nav-link active" href="/register"
-							>Register</a
-						>
-						{% endif %}
+		<nav class="navbar navbar-expand-md navbar-fixed-top">
+			<header>
+				<div class="container">
+					<a class="navbar-brand mr-4" href="/">Book Database</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarNavAltMarkup"
+						aria-controls="navbarNavAltMarkup"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="collapse navbar-collapse"
+						id="navbarNavAltMarkup"
+					>
+						<div class="navbar-nav mr-auto">
+							<a
+								class="nav-item nav-link active"
+								href="https://github.com/samarmohan/book-database"
+								>GitHub</a
+							>
+							<a class="nav-item nav-link active" href="/rules"
+								>Rules</a
+							>
+							<a class="nav-item nav-link active" href="/license"
+								>License</a
+							>
+						</div>
+						<div class="navbar-nav">
+							{% if user.is_authenticated %}
+							<a class="nav-item nav-link active" href="/add-book"
+								>Add Book</a
+							>
+							<a class="nav-item nav-link active" href="/logout"
+								>Logout</a
+							>
+							{% else %}
+							<a class="nav-item nav-link active" href="/login"
+								>Login</a
+							>
+							<a class="nav-item nav-link active" href="/register"
+								>Register</a
+							>
+							{% endif %}
+						</div>
 					</div>
 				</div>
-			</div>
+			</header>
 		</nav>
 		<div class="container">
-			{% if messages %} {% for message in messages %}
-			<div class="alert alert-success">{{ message }}</div>
-			{% endfor %} {% endif %} {% block content %} {% endblock content %}
+			<article>
+				{% if messages %} {% for message in messages %}
+				<div class="alert alert-success">{{ message }}</div>
+				{% endfor %} {% endif %} {% block content %} {% endblock content %}
+			</article>
 		</div>
 		<footer class="m-3 footer text-muted">
 			<div class="container">
