@@ -10,6 +10,5 @@ def register_view(request):
         form.save()
         username = form.cleaned_data.get("username")
         messages.success(request, f"{username}, your account was created! Please log in.")
-        form.save()
-        return HttpResponseRedirect("/users/login")
+        return HttpResponseRedirect("/login")
     return render(request, "register.html", {"form": form})

@@ -1,14 +1,10 @@
-$main-font: "Times New Roman, Times, serif";
-$weight: bold;
+$main-font: "Merriweather", Times, serif;
 
 * {
 	font-family: $main-font;
 }
 .form-buttons {
 	margin-top: 100px;
-}
-.detail-heading {
-	margin-top: 1rem;
 }
 .main-heading {
 	text-align: center;
@@ -17,17 +13,6 @@ $weight: bold;
 .welcome-message {
 	text-align: center;
 	margin: 2%;
-}
-.reload-button {
-	margin-top: 100px;
-	margin-left: 300px;
-	margin-bottom: 10px;
-}
-h5 {
-	font-weight: $weight;
-}
-table {
-	font-weight: $weight;
 }
 .note {
 	font-style: italic;
@@ -50,8 +35,8 @@ table {
 		transform: translateX(61vw);
 	}
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 988px) {
 	.btn {
-		margin-bottom: 2px;
+		margin-bottom: 3px;
 	}
 }

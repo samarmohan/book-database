@@ -1,85 +1,67 @@
 * {
-	font-family: "Times New Roman, Times, serif";
+  font-family: "Merriweather", Times, serif;
 }
 
 .form-buttons {
-	margin: 10px;
-}
-
-.detail-heading {
-	margin-top: 1rem;
+  margin-top: 100px;
 }
 
 .main-heading {
-	text-align: center;
-	margin: 1%;
+  text-align: center;
+  margin: 1%;
 }
 
 .welcome-message {
-	text-align: center;
-	margin: 2%;
-}
-
-.reload-button {
-	margin-top: 100px;
-	margin-left: 300px;
-	margin-bottom: 10px;
-}
-
-h5 {
-	font-weight: bold;
-}
-
-table {
-	font-weight: bold;
+  text-align: center;
+  margin: 2%;
 }
 
 .note {
-	font-style: italic;
+  font-style: italic;
 }
 
 .btn {
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 .create {
-	-webkit-animation-name: slide;
-	animation-name: slide;
-	-webkit-animation-duration: 9s;
-	animation-duration: 9s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-	-webkit-animation-direction: alternate;
-	animation-direction: alternate;
-	-webkit-animation-delay: 500ms;
-	animation-delay: 500ms;
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 @-webkit-keyframes slide {
-	from {
-		-webkit-transform: translateX(0vw);
-		transform: translateX(0vw);
-	}
-	to {
-		-webkit-transform: translateX(61vw);
-		transform: translateX(61vw);
-	}
+  from {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  to {
+    -webkit-transform: translateX(61vw);
+            transform: translateX(61vw);
+  }
 }
 
 @keyframes slide {
-	from {
-		-webkit-transform: translateX(0vw);
-		transform: translateX(0vw);
-	}
-	to {
-		-webkit-transform: translateX(61vw);
-		transform: translateX(61vw);
-	}
+  from {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  to {
+    -webkit-transform: translateX(61vw);
+            transform: translateX(61vw);
+  }
 }
 
-@media only screen and (max-width: 775px) {
-	.btn {
-		margin-bottom: 2px;
-	}
+@media only screen and (max-width: 988px) {
+  .btn {
+    margin-bottom: 3px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
