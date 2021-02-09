@@ -48,8 +48,12 @@ class BookCreateView(CreateView, LoginRequiredMixin):
 
 
 class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
-    context_object_name = 'book'
     model = BookModel
+    context_object_name = 'book'
+    template_name = "update.html"
+    slug_field = "Title"
+    slug_url_kwarg = "Title"
+    success_url = "/"
     fields = [
             "Title",
             "Author",
@@ -58,12 +62,9 @@ class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
             "GradeLevel",
             "Rating"
         ]
-    template_name = "update.html"
-    slug_field = "Title"
-    slug_url_kwarg = "Title"
 
     def form_valid(self, form):
-        form.instance.Name = self.request.user
+        form.instance.Name = self.request.user.username
         form.instance.Email = self.request.user.email
         return super().form_valid(form)
 
@@ -75,9 +76,9 @@ class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
 
 
 class BookDetailView(DetailView, LoginRequiredMixin):
-    template_name = "detail.html"
     model = BookModel
+    context_object_name = 'book'
+    template_name = "detail.html"
     slug_field = "Title"
     slug_url_kwarg = "Title"
-    context_object_name = 'book'
 
