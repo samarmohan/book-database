@@ -25,12 +25,8 @@
 		<p>No page count provided 😢</p>
 		{% endif %}
 
-		<h3>Inappropriate Words</h3>
-		{% if book.ContainsBadWords %}
-		<p>This book is inappropriate for someone around 8 years old</p>
-		{% else %}
-		<p>This book is not inappropriate for someone around 8 years old</p>
-		{% endif %}
+		<h3>Grade Level & Kid Friendliness</h3>
+		<p>The grade level for this book is {{ book.GradeLevel }}</p>
 
 		<h3>Rating</h3>
 		<p>

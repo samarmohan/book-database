@@ -14,6 +14,6 @@ class BookForm(forms.ModelForm):
             "Author",
             "Description",
             "PageCount",
-            "ContainsBadWords",
+            "GradeLevel",
             "Rating"
         ]
