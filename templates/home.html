@@ -15,13 +15,13 @@
 				><br />
 				This is a website where you can share books you have read with
 				other people!<br />
-				<a role="button" class="btn btn-link" href="rules/">Rules</a>
-				<a role="button" class="btn btn-link" href="license/"
+				<a  class="btn btn-link" href={% url "rules" %}>Rules</a>
+				<a  class="btn btn-link" href={% url "license" %}
 					>License</a
 				>
 			</h5>
 		</header>
-		<a class="create btn btn-primary btn-lg" href="/add-book/" role="button"
+		<a class="create btn btn-primary btn-lg"  href={% url "create" %}
 			>Create An Entry</a
 		>
 		<form method="get" action=".">
@@ -66,7 +66,7 @@
 					class="btn btn-warning"
 					value="Filter"
 				/>
-				<a role="button" class="btn btn-success" href="/"
+				<a  class="btn btn-success" href={% url "home" %}
 					>Reset Filters</a
 				>
 			</div>
@@ -90,14 +90,13 @@
 				<th>
 					<a
 						class="btn btn-danger btn-sm"
-						href="{{ book.Title }}/update"
-						role="button"
+                        href={% url "update" Title=book.Title %}
 						>Update</a
 					>
 
 					<a
-						href="{{ book.Title }}/detail"
 						class="btn btn-info btn-sm"
+                        href={% url "detail" Title=book.Title %}
 						>Details</a
 					>
 				</th>
@@ -111,8 +110,8 @@
 		{% else %}
 		<header>
 			<h3>
-				Please <a href="/login">log in</a> or
-				<a href="/register">register</a> to continue!
+				Please <a href={% url "login" %}>log in</a> or
+				<a href={% url "register" %}>register</a> to continue!
 			</h3>
 		</header>
 		<article>
@@ -128,8 +127,8 @@
 					href="https://github.com/samarmohan/book-database"
 					target="blank"
 					>here</a
-				>. You can also check out the <a href="/rules">Rules</a> and
-				<a href="/license">License</a>
+				>. You can also check out the <a href={% url "rules" %}>Rules</a> and
+				<a href={% url "license" %}>License</a>
 			</p>
 		</article>
 		{% endif %} {% endblock content %}

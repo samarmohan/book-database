@@ -13,7 +13,7 @@
 				{{ form|crispy }}
 				<small class="text-muted">
 					Forgot your password?
-					<a class="ml-2" href="/password-reset">Reset it</a>
+					<a class="ml-2" href={% url "password_reset" %}>Reset it</a>
 				</small>
 			</fieldset>
 			<div class="form-group">
@@ -22,13 +22,13 @@
 					type="submit"
 					value="Login"
 				/>
-				<a role="button" class="btn btn-warning" href="/">Go Home</a
+				<a  class="btn btn-warning" href={% url "home" %}>Go Home</a
 				><br />
 			</div>
 		</form>
 			<small class="text-muted">
 				Don't have an account?
-				<a class="ml-2" href="/register">Register</a>
+				<a class="ml-2" href={% url "register" %}>Register</a>
 			</small>
 		</div>
 		{% endblock content %}

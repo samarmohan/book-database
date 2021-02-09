@@ -18,13 +18,13 @@
 					type="submit"
 					value="Register"
 				/>
-				<a role="button" class="btn btn-warning" href="/">Go Home</a
+				<a  class="btn btn-warning" href={% url "home" %}>Go Home</a
 				><br />
 			</div>
 		</form>
 		<div class="border-top pt-3">
 			<small class="text-muted">
-				Already have an account? <a class="ml-2" href="/login">Login</a>
+				Already have an account? <a class="ml-2" href={% url "login" %}>Login</a>
 			</small>
 		</div>
 		{% endblock content %}
