@@ -1,16 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .models import BookModel
 from .forms import BookForm
-from django.contrib.auth.decorators import login_required
-
-
-@login_required
-def add_book_view(request):
-    form = BookForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/")
-    return render(request, "create.html", {"form": form})
+from django.views.generic import CreateView, DetailView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 def home_view(request):
@@ -35,17 +27,57 @@ def home_view(request):
     return render(request, "home.html", {"books": book_response_home_list})
 
 
-@login_required
-def update_view(request, title):
-    instance = BookModel.objects.get(Title=title)
-    form = BookForm(request.POST or None, instance=instance)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/")
-    return render(request, "update.html", {"form": form})
+class BookCreateView(CreateView, LoginRequiredMixin):
+    model = BookModel
+    fields = [
+            "Title",
+            "Author",
+            "Description",
+            "PageCount",
+            "GradeLevel",
+            "Rating"
+        ]
+    template_name = "create.html"
+    success_url = "/"
+
+    def form_valid(self, form):
+        form.instance.Name = self.request.user
+        form.instance.Email = self.request.user.email
+
+        return super().form_valid(form)
 
 
-@login_required
-def detail_view(request, title):
-    book_response_detail = BookModel.objects.get(Title=title)
-    return render(request, "detail.html", {"book": book_response_detail})
+class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
+    context_object_name = 'book'
+    model = BookModel
+    fields = [
+            "Title",
+            "Author",
+            "Description",
+            "PageCount",
+            "GradeLevel",
+            "Rating"
+        ]
+    template_name = "update.html"
+    slug_field = "Title"
+    slug_url_kwarg = "Title"
+
+    def form_valid(self, form):
+        form.instance.Name = self.request.user
+        form.instance.Email = self.request.user.email
+        return super().form_valid(form)
+
+    def test_func(self):
+        book = self.get_object()
+        if self.request.user == book.author:
+            return True
+        return False
+
+
+class BookDetailView(DetailView, LoginRequiredMixin):
+    template_name = "detail.html"
+    model = BookModel
+    slug_field = "Title"
+    slug_url_kwarg = "Title"
+    context_object_name = 'book'
+
