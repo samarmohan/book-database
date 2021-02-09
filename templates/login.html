@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% load crispy_forms_filters %} 
-{% load crispy_forms_tags %}
+{% extends "base.html" %} {% load crispy_forms_filters %} {% load crispy_forms_tags %}
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -12,6 +11,10 @@
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Login</legend>
 				{{ form|crispy }}
+				<small class="text-muted">
+					Forgot your password?
+					<a class="ml-2" href="/password-reset">Reset it</a>
+				</small>
 			</fieldset>
 			<div class="form-group">
 				<input
@@ -23,7 +26,6 @@
 				><br />
 			</div>
 		</form>
-		<div class="border-top pt-3">
 			<small class="text-muted">
 				Don't have an account?
 				<a class="ml-2" href="/register">Register</a>
