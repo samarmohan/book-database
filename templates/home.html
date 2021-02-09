@@ -21,7 +21,6 @@
 				>
 			</h5>
 		</header>
-
 		<a class="create btn btn-primary btn-lg" href="/add-book/" role="button"
 			>Create An Entry</a
 		>
@@ -104,6 +103,10 @@
 				</th>
 			</tr>
 			{% endfor %}
+			<small class="text-muted"
+				>Any accounts without a valid email and any entries without a
+				valid name or email will be deleted</small
+			>
 		</table>
 		{% else %}
 		<header>
