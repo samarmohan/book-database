@@ -7,8 +7,7 @@
 	<body>
 		{% block content %}
 		<header>
-			<h1 class="main-heading">Book Database</h1>
-			<hr />
+			<h1 class="main-heading border-bottom">Book Database</h1>
 			{% if user.is_authenticated %}
 			<h5 class="welcome-message">
 				Hello <em><strong>{{ user.username }}</strong></em
@@ -47,7 +46,7 @@
 				<th>Author</th>
 				<th>Rating</th>
 				<th>Submitted by</th>
-				<th>Page Count</th>
+				<th>Grade Level</th>
 				<th>Actions</th>
 			</tr>
 			{% for book in filter.qs %}
@@ -56,7 +55,7 @@
 				<th>{{ book.Author }}</th>
 				<th>{{ book.Rating }}</th>
 				<th>{{ book.Name }}</th>
-				<th>{{ book.PageCount }}</th>
+				<th>{{ book.GradeLevel }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"

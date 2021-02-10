@@ -8,6 +8,7 @@
 	<body>
 		{% block content %}
 		<h1 class="detail-heading">Details of {{ book.Title }}</h1>
+        <h3 class="detail-heading border-bottom mb-3"> by {{ book.Author }}</h3>
 		<hr />
 		<br />
 
@@ -15,18 +16,18 @@
 		{% if book.Description %}
 		<p>{{ book.Description }}</p>
 		{% else %}
-		<p>No summary provided 😢</p>
+		<p>No summary provided 😢.</p>
 		{% endif %}
 
 		<h3>Pages</h3>
 		{% if book.PageCount %}
-		<p>This book has {{ book.PageCount }} pages</p>
+		<p>This book has {{ book.PageCount }} pages.</p>
 		{% else %}
-		<p>No page count provided 😢</p>
+		<p>No page count provided 😢.</p>
 		{% endif %}
 
-		<h3>Grade Level & Kid Friendliness</h3>
-		<p>The grade level for this book is {{ book.GradeLevel }}</p>
+		<h3>Grade Level</h3>
+		<p>The book is most appropriate for kids in grades {{ book.GradeLevel }}.</p>
 
 		<h3>Rating</h3>
 		<p>
