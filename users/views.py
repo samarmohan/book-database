@@ -1,22 +1,18 @@
 import os
 
+from django.contrib import messages
 from django.contrib.auth import get_user_model
-
-from .form import UserRegisterForm
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib import messages
-from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from .form import UserRegisterForm
+
+from .forms import UserRegisterForm
 
 UserModel = get_user_model()
 

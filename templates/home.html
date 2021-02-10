@@ -27,37 +27,7 @@
 		<form method="get" action=".">
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Filter</legend>
-				<label for="title">Filter by the title of the book:</label>
-				<input
-					type="text"
-					class="form-control form-group-lg"
-					id="title"
-					name="title"
-				/>
-				<label for="author">Filter by the author of the book:</label>
-				<input
-					type="text"
-					class="form-control form-group-lg"
-					id="author"
-					name="author"
-				/>
-				<label for="name"
-					>Filter by the name of the person who submitted the
-					book:</label
-				>
-				<input
-					type="text"
-					class="form-control form-group-lg"
-					id="name"
-					name="name"
-				/>
-				<label for="rating">Filter by the rating of the book:</label>
-				<input
-					type="number"
-					class="form-control form-group-lg"
-					id="rating"
-					name="rating"
-				/>
+				{{ filter.form|crispy }}
 			</fieldset>
 			<div class="form-buttons form-group">
 				<input
@@ -80,7 +50,7 @@
 				<th>Page Count</th>
 				<th>Actions</th>
 			</tr>
-			{% for book in books %}
+			{% for book in filter.qs %}
 			<tr>
 				<th>{{ book.Title }}</th>
 				<th>{{ book.Author }}</th>

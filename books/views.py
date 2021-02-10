@@ -1,44 +1,32 @@
-from django.shortcuts import render, HttpResponseRedirect
 from .models import BookModel
-from .forms import BookForm
-from django.views.generic import CreateView, DetailView, UpdateView
+from django.views.generic import CreateView, DetailView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .filters import BookFilter
 
 
-def home_view(request):
-    book_response_home_list = BookModel.objects.order_by("-Rating")
-    title_contains_query = request.GET.get("title")
-    author_contains_query = request.GET.get("author")
-    name_contains_query = request.GET.get("name")
-    rating_contains_query = request.GET.get("rating")
+class BookListView(ListView):
+    model = BookModel
+    context_object_name = "books"
+    template_name = "home.html"
 
-    if title_contains_query != "" and title_contains_query is not None:
-        book_response_home_list = book_response_home_list.filter(Title__icontains=title_contains_query)
-
-    elif author_contains_query != "" and author_contains_query is not None:
-        book_response_home_list = book_response_home_list.filter(Author__icontains=author_contains_query)
-
-    elif name_contains_query != "" and name_contains_query is not None:
-        book_response_home_list = book_response_home_list.filter(Name__icontains=name_contains_query)
-
-    elif rating_contains_query != "" and rating_contains_query is not None:
-        book_response_home_list = book_response_home_list.filter(Rating__icontains=rating_contains_query)
-
-    return render(request, "home.html", {"books": book_response_home_list})
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["filter"] = BookFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class BookCreateView(CreateView, LoginRequiredMixin):
     model = BookModel
-    fields = [
-            "Title",
-            "Author",
-            "Description",
-            "PageCount",
-            "GradeLevel",
-            "Rating"
-        ]
     template_name = "create.html"
     success_url = "/"
+    fields = [
+        "Title",
+        "Author",
+        "Description",
+        "PageCount",
+        "GradeLevel",
+        "Rating"
+    ]
 
     def form_valid(self, form):
         form.instance.Name = self.request.user

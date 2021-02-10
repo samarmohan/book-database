@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'books',
     'users',
     'crispy_forms',
+    'django_filters',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

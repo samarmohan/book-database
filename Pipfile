@@ -12,6 +12,7 @@ django-heroku = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 django-crispy-forms = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.9"
