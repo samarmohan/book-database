@@ -88,7 +88,7 @@
 		<div class="container">
 			<article>
 				{% if messages %} {% for message in messages %}
-				<div class="alert alert-success">{{ message }}</div>
+				<div class="alert alert-success  alert-dismissable">{{ message }}</div>
 				{% endfor %} {% endif %} {% block content %} {% endblock content %}
 			</article>
 		</div>

@@ -37,7 +37,7 @@ def register_view(request):
         })
         to = form.cleaned_data.get('email')
         send_mail("Activate your account", message, os.environ.get("EMAIL_USER"), [to], html_message=message)
-        messages.success(request, f"{username}, your account was created! Please verify your email address.")
+        messages.success(request, f"{username}, your account was created! Please check your email!")
 
     return render(request, "register.html", {"form": form})
 

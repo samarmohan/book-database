@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		{% block content %}
-            Your email has been confirmed! You can now <a href={% url "login" %}>log in</a>!
+            <div class="alert alert-success">Your email has been confirmed! You can now <a href={% url "login" %}>log in</a>!</div>
 		{% endblock content %}
 	</body>
 </html>
