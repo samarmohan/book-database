@@ -15,7 +15,7 @@ class BookListView(ListView):
         return context
 
 
-class BookCreateView(CreateView, LoginRequiredMixin):
+class BookCreateView(LoginRequiredMixin, CreateView):
     model = BookModel
     template_name = "books/create.html"
     success_url = "/"
@@ -35,7 +35,7 @@ class BookCreateView(CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
+class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BookModel
     context_object_name = 'book'
     template_name = "books/update.html"
@@ -58,7 +58,7 @@ class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
 
     def test_func(self):
         book = self.get_object()
-        if self.request.user == book.author:
+        if self.request.user == book.Name:
             return True
         return False
 
