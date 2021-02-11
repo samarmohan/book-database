@@ -77,8 +77,8 @@
 		{% else %}
 		<header>
 			<h3>
-				Please <a href="{% url 'login %}">log in</a> or
-				<a href="{% url 'register %}">register</a> to continue!
+				Please <a href="{% url 'login' %}">log in</a> or
+				<a href="{% url 'register' %}">register</a> to continue!
 			</h3>
 		</header>
 		<article>
@@ -95,8 +95,8 @@
 					target="blank"
 					>here</a
 				>. You can also check out the
-				<a href="{% url 'rules %}">Rules</a> and
-				<a href="{% url 'license %}">License</a>
+				<a href="{% url 'rules' %}">Rules</a> and
+				<a href="{% url 'license' %}">License</a>
 			</p>
 		</article>
 		{% endif %} {% endblock content %}
