@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o79*k@2*b!*(#j8%++4b^*3#hi&zr^+6+xl0_$(jlkcth27q8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["glacial-forest-38809.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -152,4 +152,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
