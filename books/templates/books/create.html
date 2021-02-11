@@ -1,23 +1,24 @@
-{% extends "base.html" %} {% load crispy_forms_filters %} {% load crispy_forms_tags %}
+{% extends "books/base.html" %} {% load crispy_forms_filters %} {% load crispy_forms_tags %}
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>{% block title %}Update{% endblock title %}</title>
+		<title>{% block title %}Create{% endblock title %}</title>
 	</head>
 	<body>
 		{% block content %}
 		<form style="margin: 15px" method="POST">
 			{% csrf_token %}
 			<fieldset class="form-group">
-				<legend class="border-bottom mb-4">Update</legend>
+				<legend class="border-bottom mb-4">Create</legend>
 				{{ form|crispy }}
 			</fieldset>
 			<div class="form-group">
 				<input
 					class="btn btn-success"
 					type="submit"
-					value="Update Entry"
+					value="Create Entry"
 				/>
+				<input class="btn btn-danger" type="reset" value="Reset" />
 			</div>
 			<p id="emailHelp" class="form-text text-muted">
 				We'll never share your email with anyone else.

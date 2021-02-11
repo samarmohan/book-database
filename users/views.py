@@ -35,7 +35,7 @@ def register_view(request):
         send_mail("Activate your account", message, os.environ.get("EMAIL_USER"), [to], html_message=message)
         messages.success(request, f"{username}, your account was created! Please check your email!")
 
-    return render(request, "register.html", {"form": form})
+    return render(request, "users/register.html", {"form": form})
 
 
 def activate_view(request, uidb64, token):
@@ -47,6 +47,6 @@ def activate_view(request, uidb64, token):
     if user is not None and default_token_generator.check_token(user, token):
         user.is_active = True
         user.save()
-        return render(request, "confirm_email_complete.html")
+        return render(request, "users/confirm_email_complete.html")
     else:
         return HttpResponse('Activation link is invalid!')

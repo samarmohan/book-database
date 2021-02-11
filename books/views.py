@@ -7,7 +7,7 @@ from .filters import BookFilter
 class BookListView(ListView):
     model = BookModel
     context_object_name = "books"
-    template_name = "home.html"
+    template_name = "books/home.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -17,7 +17,7 @@ class BookListView(ListView):
 
 class BookCreateView(CreateView, LoginRequiredMixin):
     model = BookModel
-    template_name = "create.html"
+    template_name = "books/create.html"
     success_url = "/"
     fields = [
         "Title",
@@ -38,7 +38,7 @@ class BookCreateView(CreateView, LoginRequiredMixin):
 class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
     model = BookModel
     context_object_name = 'book'
-    template_name = "update.html"
+    template_name = "books/update.html"
     slug_field = "Title"
     slug_url_kwarg = "Title"
     success_url = "/"
@@ -66,7 +66,7 @@ class BookUpdateView(UpdateView, UserPassesTestMixin, LoginRequiredMixin):
 class BookDetailView(DetailView, LoginRequiredMixin):
     model = BookModel
     context_object_name = 'book'
-    template_name = "detail.html"
+    template_name = "books/detail.html"
     slug_field = "Title"
     slug_url_kwarg = "Title"
 

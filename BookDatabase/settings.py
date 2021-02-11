@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["glacial-forest-38809.herokuapp.com"]
 INSTALLED_APPS = [
     'books',
     'users',
+    'pages',
     'crispy_forms',
     'django_filters',
     'rest_framework',
