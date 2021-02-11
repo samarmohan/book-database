@@ -18,6 +18,6 @@ class BookModel(models.Model):
     Author = models.CharField(max_length=255, blank=False, null=False, verbose_name="Author of the book")
     Description = models.TextField(blank=True, null=True, verbose_name="Summary of the book (Optional)")
     PageCount = models.PositiveIntegerField(blank=True, null=True, verbose_name="Number of pages in the book (Optional)")
-    GradeLevel = models.CharField(verbose_name="Grade Level of this book (Default is 6-8)", max_length=20, choices=GRADE_CHOICES, default="6-8", null=True, blank=True)
+    # GradeLevel = models.CharField(verbose_name="Grade Level of this book (Default is 6-8)", max_length=20, choices=GRADE_CHOICES, default="6-8", null=True, blank=True)
     Rating = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)], null=False, blank=False, verbose_name="Rating out of 10")
 

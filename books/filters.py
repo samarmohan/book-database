@@ -18,7 +18,7 @@ class BookFilter(django_filters.FilterSet):
             "Title": ["icontains"],
             "Author": ["icontains"],
             "Name": ["icontains"],
-            "GradeLevel": ["exact"]
+            # "GradeLevel": ["exact"]
         }
 
     @staticmethod

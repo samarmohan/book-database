@@ -46,7 +46,7 @@
 				<th>Author</th>
 				<th>Rating</th>
 				<th>Submitted by</th>
-				<th>Grade Level</th>
+				<th>Page Count</th>
 				<th>Actions</th>
 			</tr>
 			{% for book in filter.qs %}
@@ -55,7 +55,7 @@
 				<th>{{ book.Author }}</th>
 				<th>{{ book.Rating }}</th>
 				<th>{{ book.Name }}</th>
-				<th>{{ book.GradeLevel }}</th>
+				<th>{{ book.PageCount }}</th>
 				<th>
 					<a
 						class="btn btn-danger btn-sm"

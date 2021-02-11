@@ -10,6 +10,6 @@ class BookForm(forms.ModelForm):
             "Author",
             "Description",
             "PageCount",
-            "GradeLevel",
+            # "GradeLevel",
             "Rating"
         ]
