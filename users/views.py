@@ -25,7 +25,7 @@ def register_view(request):
         user.is_active = False
         user.save()
         current_site = get_current_site(request)
-        message = render_to_string('email.html', {
+        message = render_to_string('users/email.html', {
             'user': user,
             'domain': current_site.domain,
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
