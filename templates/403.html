@@ -8,7 +8,7 @@
 	<body>
 		{% block content %}
 		<div class="alert alert-info alert-dismissible">Error 403: Access Denied. Please do not try to edit an entry that is not yours.</div>
-		<a class="btn btn-warning" href={% url "login" %}>Go Home</a>
+		<a class="btn btn-warning" href="{% url 'home %}">Go Home</a>
 		{% endblock content %}
 	</body>
 </html>

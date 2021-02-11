@@ -1,7 +1,12 @@
 <h2>Hi <strong>{{ user.username }}</strong>,</h2>
-Please click on the <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-">link</a> to confirm your Book Worm account.<br />
-If you did not do this, please tell me. <br>
+Please click on the
+<a
+	href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+"
+	>link</a
+>
+to confirm your Book Worm account.<br />
+If you did not do this, please tell me. <br />
 
 <small class="text-muted">This action was done automatically</small>
 

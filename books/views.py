@@ -24,7 +24,6 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         "Author",
         "Description",
         "PageCount",
-        "GradeLevel",
         "Rating"
     ]
 
@@ -47,7 +46,6 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             "Author",
             "Description",
             "PageCount",
-            "GradeLevel",
             "Rating"
         ]
 

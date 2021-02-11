@@ -8,7 +8,7 @@
 	<body>
 		{% block content %}
 		<h1 class="detail-heading">Details of {{ book.Title }}</h1>
-        <h3 class="detail-heading border-bottom mb-3"> by {{ book.Author }}</h3>
+		<h3 class="detail-heading border-bottom mb-3">by {{ book.Author }}</h3>
 		<hr />
 		<br />
 
@@ -27,7 +27,10 @@
 		{% endif %}
 
 		<h3>Grade Level</h3>
-		<p>The book is most appropriate for kids in grades {{ book.GradeLevel }}.</p>
+		<p>
+			The book is most appropriate for kids in grades {{ book.GradeLevel
+			}}.
+		</p>
 
 		<h3>Rating</h3>
 		<p>
@@ -36,7 +39,7 @@
 		</p>
 		<br />
 
-		<a  class="btn btn-warning" href={% url "home" %}>Go Home</a><br />
+		<a class="btn btn-warning" href="{% url 'home' %}">Go Home</a><br />
 		{% endblock content %}
 	</body>
 </html>
