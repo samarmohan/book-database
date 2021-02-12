@@ -13,7 +13,7 @@ GRADE_CHOICES = (
 
 class BookModel(models.Model):
     Name = models.CharField(max_length=255, blank=False, null=False, verbose_name="Your FULL name")
-    Email = models.EmailField(max_length=255, blank=False, null=False, verbose_name="Your SCHOOL email")
+    Email = models.EmailField(max_length=255, blank=False, null=False, verbose_name="Your PERSONAL email")
     Title = models.CharField(max_length=255, blank=False, null=False, unique=True, verbose_name="Title of the book")
     Author = models.CharField(max_length=255, blank=False, null=False, verbose_name="Author of the book")
     Description = models.TextField(blank=True, null=True, verbose_name="Summary of the book (Optional)")
