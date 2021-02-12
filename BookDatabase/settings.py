@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o79*k@2*b!*(#j8%++4b^*3#hi&zr^+6+xl0_$(jlkcth27q8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://glacial-forest-38809.herokuapp.com/"]
 
