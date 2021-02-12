@@ -56,7 +56,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         book = self.get_object()
-        if self.request.user == book.Name:
+        if self.request.user.username == book.Name:
             return True
         return False
 
