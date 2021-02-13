@@ -10,6 +10,7 @@
 			{% csrf_token %}
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Create</legend>
+                <!-- Use Crispy to make forms nice -->
 				{{ form|crispy }}
 			</fieldset>
 			<div class="form-group">
@@ -21,6 +22,7 @@
 				<input class="btn btn-danger" type="reset" value="Reset" />
 			</div>
 			<p id="emailHelp" class="form-text text-muted">
+                <!-- lol -->
 				We'll never share your email with anyone else.
             </p>
 			<a class="btn btn-warning" href="{% url 'home' %}">Cancel</a><br />

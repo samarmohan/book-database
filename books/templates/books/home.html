@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		{% block content %}
+        <!-- What to display if the user is logged in -->
 		<header>
 			<h1 class="main-heading border-bottom">Book Database</h1>
 			{% if user.is_authenticated %}
@@ -21,6 +22,7 @@
 		<a class="create btn btn-primary btn-lg" href="{% url 'create' %}"
 			>Create An Entry</a
 		>
+        <!-- Start filter -->
 		<form method="get" action=".">
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Filter</legend>
@@ -38,7 +40,9 @@
 				>
 			</div>
 		</form>
+        <!-- End filter -->
 		<table class="table table-striped table-bordered table-hover">
+        <!-- Main table where books are displayed -->
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
@@ -69,12 +73,14 @@
 				</th>
 			</tr>
 			{% endfor %}
+        <!-- Some random note -->
 			<small class="text-muted"
 				>Any accounts without a valid email and any entries without a
 				valid name or email will be deleted</small
 			>
 		</table>
 		{% else %}
+                <!-- What to display if the user is not logged in -->
 		<header>
 			<h3>
 				Please <a href="{% url 'login' %}">log in</a> or

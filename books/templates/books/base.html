@@ -24,13 +24,17 @@
 			rel="stylesheet"
 			href="https://bootswatch.com/4/darkly/bootstrap.min.css"
 		/>
+        <!-- Merriweather font imports from Google fonts -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
 			rel="stylesheet"
 		/>
+        <!-- Title will be "Book Database - {Title of page}" -->
 		<title>Book Database - {% block title %} {% endblock title %}</title>
 
+        <!-- Styles are in base.html because static files are causing problems
+        Most styles are in other files so some IDEs will say "unused style" -->
 		<style>
 			* {
 				font-family: "Merriweather", Times, serif;
@@ -97,6 +101,7 @@
 		</style>
 	</head>
 	<body>
+        <!-- Start Bootstrap navbar -->
 		<nav class="navbar navbar-expand-md navbar-fixed-top">
 			<div class="container">
 				<a class="navbar-brand mr-4" href="{% url 'home' %}"
@@ -113,6 +118,7 @@
 				>
 					<span class="navbar-toggler-icon"></span>
 				</button>
+                <!-- This part will change depending on if the person is authenticated -->
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav mr-auto">
 						<a
@@ -160,12 +166,15 @@
 				</div>
 			</div>
 		</nav>
+        <!-- End Bootstrap navbar -->
 		<div class="container">
+        <!-- Display backend messages -->
 			<article>
 				{% if messages %} {% for message in messages %}
 				<div class="alert alert-success alert-dismissible">
 					{{ message }}
 				</div>
+                <!-- Main content for other pages -->
 				{% endfor %} {% endif %} {% block content %} {% endblock content %}
 			</article>
 		</div>

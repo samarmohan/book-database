@@ -4,17 +4,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .filters import BookFilter
 
 
+# Home page view
 class BookListView(ListView):
     model = BookModel
     context_object_name = "books"
     template_name = "books/home.html"
 
+    # Filtering function
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context["filter"] = BookFilter(self.request.GET, queryset=self.get_queryset())
         return context
 
 
+# Create page view
 class BookCreateView(LoginRequiredMixin, CreateView):
     model = BookModel
     template_name = "books/create.html"
@@ -27,6 +30,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         "Rating"
     ]
 
+    # Set Name and Email to the logged in username and email
     def form_valid(self, form):
         form.instance.Name = self.request.user
         form.instance.Email = self.request.user.email
@@ -34,6 +38,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+# Update page view
 class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BookModel
     context_object_name = 'book'
@@ -49,11 +54,13 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             "Rating"
         ]
 
+    # Set Name and Email to the logged in username and email
     def form_valid(self, form):
         form.instance.Name = self.request.user.username
         form.instance.Email = self.request.user.email
         return super().form_valid(form)
 
+    # Makes sure the person trying to edit is the one that actually created the book.
     def test_func(self):
         book = self.get_object()
         if self.request.user.username == book.Name:
@@ -61,6 +68,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return False
 
 
+# Detail page view
 class BookDetailView(DetailView, LoginRequiredMixin):
     model = BookModel
     context_object_name = 'book'
