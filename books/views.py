@@ -1,7 +1,8 @@
-from .models import BookModel
-from django.views.generic import CreateView, DetailView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import CreateView, DetailView, UpdateView, ListView
+
 from .filters import BookFilter
+from .models import BookModel
 
 
 # Home page view
@@ -27,6 +28,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         "Author",
         "Description",
         "PageCount",
+        "GradeLevel",
         "Rating"
     ]
 
@@ -47,12 +49,13 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     slug_url_kwarg = "Title"
     success_url = "/"
     fields = [
-            "Title",
-            "Author",
-            "Description",
-            "PageCount",
-            "Rating"
-        ]
+        "Title",
+        "Author",
+        "Description",
+        "PageCount",
+        "GradeLevel",
+        "Rating"
+    ]
 
     # Set Name and Email to the logged in username and email
     def form_valid(self, form):
@@ -75,4 +78,3 @@ class BookDetailView(DetailView, LoginRequiredMixin):
     template_name = "books/detail.html"
     slug_field = "Title"
     slug_url_kwarg = "Title"
-
