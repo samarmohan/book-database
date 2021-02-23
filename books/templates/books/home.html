@@ -11,7 +11,7 @@
 			<h1 class="main-heading border-bottom">Book Database</h1>
 			{% if user.is_authenticated %}
 			<h5 class="welcome-message">
-				Hello <em><strong>{{ user.username }}</strong></em
+				Hello <em><strong>{{ user.first_name }}</strong></em
 				><br />
 				This is a website where you can share books you have read with
 				other people!<br />
@@ -21,6 +21,7 @@
 		</header>
 		<a class="create btn btn-primary btn-lg" href="{% url 'create' %}"
 			>Create An Entry</a
+		
 		>
         <!-- Start filter -->
 		<form method="get" action=".">
@@ -53,7 +54,15 @@
 			</tr>
 			{% for book in filter.qs %}
 			<tr>
-				<th>{{ book.Title }}</th>
+				<th>
+					{% if book.ImportantBook %}
+                        <i class="fas fa-star"></i>
+                    {% endif %}
+                    {{ book.Title }}
+                    {% if book.ImportantBook %}
+                        <i class="fas fa-star"></i>
+                    {% endif %}
+				</th>
 				<th>{{ book.Author }}</th>
 				<th>{{ book.Rating }}</th>
 				<th>{{ book.Name }}</th>

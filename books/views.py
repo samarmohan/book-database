@@ -34,7 +34,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
 
     # Set Name and Email to the logged in username and email
     def form_valid(self, form):
-        form.instance.Name = self.request.user
+        form.instance.Name = self.request.user.first_name + "  " + self.request.user.last_name
         form.instance.Email = self.request.user.email
 
         return super().form_valid(form)
@@ -59,14 +59,14 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     # Set Name and Email to the logged in username and email
     def form_valid(self, form):
-        form.instance.Name = self.request.user.username
+        form.instance.Name = self.request.user.first_name + "  " + self.request.user.last_name
         form.instance.Email = self.request.user.email
         return super().form_valid(form)
 
     # Makes sure the person trying to edit is the one that actually created the book.
     def test_func(self):
         book = self.get_object()
-        if self.request.user.username == book.Name:
+        if self.request.user.first_name + "  " + self.request.user.last_name == book.Name and self.request.user.email == book.Email:
             return True
         return False
 

@@ -21,7 +21,7 @@ def register_view(request):
     # Makes sure it is a post request
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():
-        username = form.cleaned_data.get("username")
+        first_name = form.cleaned_data.get("first_name")
         # Save the user
         user = form.save(commit=False)
         # But make them not active. If a user is not active, they are basically not created.
@@ -39,7 +39,7 @@ def register_view(request):
         # Sends email using email template.
         send_mail("Activate your account", message, os.environ.get("EMAIL_USER"), [to], html_message=message)
         # Display success message in template
-        messages.success(request, f"{username}, your account was created! Please check your email!")
+        messages.success(request, f"{first_name}, your account was created! Please check your email!")
 
     return render(request, "users/register.html", {"form": form})
 
