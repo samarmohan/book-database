@@ -37,7 +37,7 @@ def register_view(request):
         })
         to = form.cleaned_data.get('email')
         # Sends email using email template.
-        send_mail("Activate your account", message, os.environ.get("EMAIL_USER"), [to], html_message=message)
+        send_mail("Activate your account", message, from_email=os.environ.get("EMAIL_USER"), recipient_list=[to], html_message=message)
         # Display success message in template
         messages.success(request, f"{first_name}, your account was created! Please check your email!")
 
